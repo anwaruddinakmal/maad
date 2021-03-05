@@ -44,7 +44,10 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">My Profile</a>
+                            @if (Auth::user()->hasAnyRole('admin'))
+                            <a class="dropdown-item" href="/admin">Administration</a>
+                            @endif
+                            <a class="dropdown-item" href="/home">My Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" style="color: red;" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Log Out</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -57,7 +60,7 @@
             </div>
         </nav>
 
-        <main class="py-5">
+        <main>
             @yield('content')
         </main>
     </div>

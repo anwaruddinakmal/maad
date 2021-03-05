@@ -53,9 +53,9 @@
                         <a href="#" class="btn btn-light text-muted" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}&nbsp;&nbsp;<i class="fas fa-caret-down fa-sm"></i></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             @if (Auth::user()->hasAnyRole('admin'))
-                            <a class="dropdown-item" href="{{ url('/home') }}">Dashboard</a>
+                            <a class="dropdown-item" href="/admin'">Administration</a>
                             @endif
-                            <a class="dropdown-item" href="#">My Profile</a>
+                            <a class="dropdown-item" href="/home">My Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" style="color: red;" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Log Out</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
